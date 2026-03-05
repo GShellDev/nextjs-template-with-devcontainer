@@ -1,0 +1,49 @@
+{
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:24-bullseye",
+  "hostRequirements": {
+    "cpus": 4
+  },
+  "updateContentCommand": "pnpm install && pnpm build",
+  "features": {
+    "ghcr.io/devcontainers/features/git-lfs:1": { "autoPull": false },
+    "ghcr.io/devcontainers/features/github-cli:1": {},
+    "ghcr.io/mikaello/devcontainer-features/modern-shell-utils:2.0.0": {},
+    "ghcr.io/devcontainers-extra/features/pre-commit:2": {},
+    "ghcr.io/devcontainers-extra/features/fzf:1": {},
+    "ghcr.io/eitsupi/devcontainer-features/jq-likes:2": {},
+    "ghcr.io/devcontainers-extra/features/zsh-plugins:0": {
+      "plugins": "sudo python docker zsh-interactive-cd zsh-navigation-tools"
+    }
+  },
+  "postAttachCommand": {
+    "server": "pnpm dev"
+  },
+  "customizations": {
+    "codespaces": {
+      "openFiles": ["src/app/lauout.tsx"]
+    },
+    "vscode": {
+      "extensions": [
+        "bradlc.vscode-tailwindcss",
+        "esbenp.prettier-vscode",
+        "dbaeumer.vscode-eslint",
+        "formulahendry.auto-rename-tag",
+        "redhat.vscode-yaml",
+        "PKief.material-icon-theme",
+        "miguelsolorio.fluent-icons",
+        "ms-azuretools.vscode-containers"
+      ],
+      "settings": {
+        "workbench.iconTheme": "material-icon-theme",
+        "workbench.productIconTheme": "fluent-icons"
+      }
+    }
+  },
+  "portsAttributes": {
+    "3000": {
+      "label": "Application",
+      "onAutoForward": "notify"
+    }
+  },
+  "forwardPorts": [3000]
+}

@@ -1,0 +1,45 @@
+{
+  "name": "next-template",
+  "version": "0.1.0",
+  "description": "Um template robusto e moderno de Next.js configurado com melhores práticas, TypeScript, Tailwind CSS e ESLint",
+  "author": "GShellDev <contact-me@gshelldev.com> (https://github.com/GShellDev)",
+  "license": "MIT",
+  "homepage": "https://github.com/GShellDev/next-template",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GShellDev/next-template.git"
+  },
+  "keywords": [
+    "nextjs",
+    "template",
+    "react",
+    "typescript",
+    "tailwindcss",
+    "eslint"
+  ],
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "next": "16.1.6",
+    "react": "19.2.3",
+    "react-dom": "19.2.3"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "clsx": "^2.1.1",
+    "eslint": "^9",
+    "eslint-config-next": "16.1.6",
+    "tailwind-merge": "^3.5.0",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  },
+  "packageManager": "pnpm@10.28.2"
+}
