@@ -15,9 +15,12 @@
       "plugins": "sudo python docker zsh-interactive-cd zsh-navigation-tools"
     }
   },
+  "waitFor": "postCreateCommand",
   "postAttachCommand": {
     "server": "pnpm dev"
   },
+  "postCreateCommand": "chmod +x .devcontainer/install-kali-theme.sh",
+  "postStartCommand": "bash .devcontainer/install-kali-theme.sh",
   "customizations": {
     "codespaces": {
       "openFiles": ["src/app/lauout.tsx"]
