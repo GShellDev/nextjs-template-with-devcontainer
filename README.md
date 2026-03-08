@@ -37,8 +37,8 @@ npm --version
 1. **Clone ou faça download do repositório**
 
 ```bash
-git clone https://github.com/seu-usuario/next-template.git
-cd next-template
+git clone https://github.com/gshelldev/nextjs-template-with-devcontainer.git
+cd nextjs-template-with-devcontainer
 ```
 
 2. **Instale as dependências**
@@ -76,6 +76,7 @@ O projeto inclui configuração `.devcontainer` para usar com VSCode:
 4. Assim que pronto, execute: `npm run dev`
 
 > **💡 Benefício:** Ambiente completamente isolado com todas as dependências pré-instaladas
+> **⚠️ Configure o Git:** O Devcontainer é um ambiente isolado e não herda suas configurações locais (nome, email, etc.). Saiba como configurar o git [aqui](###⚙️_Configuração_do_Git).
 
 ### GitHub Codespaces
 
@@ -96,6 +97,18 @@ Execute o projeto diretamente no navegador usando GitHub Codespaces:
 - Disponível diretamente no navegador
 
 > **✨ Benefício:** Desenvolvimento completamente na nuvem, sem necessidade de máquina poderosa
+
+---
+
+### ⚙️ Configuração do Git
+
+Por ser um ambiente isolado, o Devcontainer não herda suas configurações locais de Git.
+
+Configure seu nome e email antes de realizar commits:
+```bash
+git config --global user.name "Seu Nome"
+git config --global user.email "seu@email.com"
+```
 
 ---
 
@@ -252,9 +265,9 @@ Este projeto está licenciado sob a MIT License - veja o arquivo `LICENSE` para 
 
 Se encontrar problemas ou tiver dúvidas:
 
-- Abra uma [Issue](https://github.com/gshelldev/next-template/issues)
+- Abra uma [Issue](https://github.com/gshelldev/nextjs-template-with-devcontainer/issues)
 - Consulte a [documentação do Next.js](https://nextjs.org/docs)
-- Verifique as [perguntas frequentes](https://github.com/gshelldev/next-template/discussions)
+- Verifique as [perguntas frequentes](https://github.com/gshelldev/nextjs-template-with-devcontainer/discussions)
 
 ---
 
