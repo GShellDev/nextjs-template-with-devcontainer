@@ -1,29 +1,28 @@
 {
+  "name": "NextJS Codespaces",
   "image": "mcr.microsoft.com/devcontainers/typescript-node:24-bullseye",
   "hostRequirements": {
     "cpus": 4
   },
-  "updateContentCommand": "pnpm install && pnpm build",
+  "onCreateCommand": "find ${containerWorkspaceFolder}/.devcontainer/scripts -type f -name '*.sh' -exec chmod +x {} +",
+  "postCreateCommand": "bash ${containerWorkspaceFolder}/.devcontainer/scripts/setup.sh --install-theme --theme kali-linux",
+  "postAttachCommand": {
+    "server": "pnpm dev"
+  },
+  "updateContentCommand": "pnpm install",
   "features": {
     "ghcr.io/devcontainers/features/git-lfs:1": { "autoPull": false },
     "ghcr.io/devcontainers/features/github-cli:1": {},
     "ghcr.io/mikaello/devcontainer-features/modern-shell-utils:2.0.0": {},
     "ghcr.io/devcontainers-extra/features/pre-commit:2": {},
     "ghcr.io/devcontainers-extra/features/fzf:1": {},
-    "ghcr.io/eitsupi/devcontainer-features/jq-likes:2": {},
-    "ghcr.io/devcontainers-extra/features/zsh-plugins:0": {
-      "plugins": "sudo python docker zsh-interactive-cd zsh-navigation-tools"
-    }
+    "ghcr.io/eitsupi/devcontainer-features/jq-likes:2": {}
   },
-  "waitFor": "postCreateCommand",
-  "postAttachCommand": {
-    "server": "pnpm dev"
-  },
-  "postCreateCommand": "chmod +x .devcontainer/install-kali-theme.sh",
-  "postStartCommand": "bash .devcontainer/install-kali-theme.sh",
+  "remoteUser": "root",
+  "privileged": true,
   "customizations": {
     "codespaces": {
-      "openFiles": ["src/app/lauout.tsx"]
+      "openFiles": ["src/app/layout.tsx"]
     },
     "vscode": {
       "extensions": [
@@ -38,7 +37,10 @@
       ],
       "settings": {
         "workbench.iconTheme": "material-icon-theme",
-        "workbench.productIconTheme": "fluent-icons"
+        "workbench.productIconTheme": "fluent-icons",
+        "terminal.integrated.defaultProfile.osx": "zsh",
+        "terminal.integrated.defaultProfile.linux": "zsh",
+        "terminal.integrated.defaultProfile.windows": "powershell"
       }
     }
   },
